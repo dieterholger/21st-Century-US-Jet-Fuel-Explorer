@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>21st Century Jet Fuel Explorer</title>
+  <!-- Need to import Babelify so I can get promises working natively on other browsers. -->
+  <link href="stylesheet.css" rel="stylesheet">
+  <script src='plotly-latest.min.js'></script>
+</head>
+
+<body>
+  <!-- By giving a div an inline background color property you can change the background color of Plot.ly graphs. Reference: https://codepen.io/etpinard/pen/JXagKL -->
+  <div id='intro'>
+    <p>Helloooo</p>
+  </div>
+  <div id='stateJetFuelConsumptionDiv' style='background-color: #eeeeee;'></div>
+  <script>
+    /* For potential second API: https://opensky-network.org/apidoc/rest.html */
+
+    /* 21st century aviation gasoline consumption in the United States. */
+
+    /* API documentation: https://www.eia.gov/opendata/ */
+
+    /* API Key: 3d9541721290f76e46a2250bcbea2ff3 */
+
+    /* Object of arrays to hold state data on consumption. Y-axis data. */
+
+    /* Alphabetical order of states:
+     Alabama [0]
+     Alaska [1]
+     Arizona [2]
+     Arkansas [3]
+     California [4]
+     Colorado [5]
+     Connecticut [6]
+     Delaware [7]
+     Florida [8]
+     Georgia [9]
+     Hawaii [10]
+     Idaho [11]
+     Illinois [12]
+     Indiana [13]
+     Iowa [14]
+     Kansas [15]
+     Kentucky [16]
+     Louisiana [17]
+     Maine [18]
+     Maryland [19]
+     Massachusetts [20]
+     Michigan [21]
+     Minnesota [22]
+     Mississippi [23]
+     Missouri [24]
+     Montana [25]
+     Nebraska [26]
+     Nevada [27]
+     New Hampshire [28]
+     New Jersey [29]
+     New Mexico [30]
+     New York [31]
+     North Carolina [32]
+     North Dakota [33]
+     Ohio [34]
+     Oklahoma [35]
+     Oregon [36]
+     Pennsylvania [37]
+     Rhode Island  [38]
+     South Carolina [39]
+     South Dakota [40]
+     Tennessee [41]
+     Texas [42]
+     Utah [43]
+     Vermont [44]
+     Virginia [45]
+     Washington [46]
+     West Virginia [47]
+     Wisconsin [48]
+     Wyoming [49] */
+
+    annualStateJetFuelConsumptionIDs = ['SEDS.JFTCP.AL.A', 'SEDS.JFTCP.AK.A', 'SEDS.JFTCP.AR.A', 'SEDS.JFTCP.AZ.A', 'SEDS.JFTCP.CA.A', 'SEDS.JFTCP.CO.A', 'SEDS.JFTCP.CT.A', 'SEDS.JFTCP.DE.A', 'SEDS.JFTCP.FL.A', 'SEDS.JFTCP.GA.A',
+      'SEDS.JFTCP.HI.A',
+      'SEDS.JFTCP.ID.A', 'SEDS.JFTCP.IL.A', 'SEDS.JFTCP.IN.A', 'SEDS.JFTCP.IA.A', 'SEDS.JFTCP.KS.A', 'SEDS.JFTCP.KY.A', 'SEDS.JFTCP.LA.A', 'SEDS.JFTCP.ME.A', 'SEDS.JFTCP.MD.A', 'SEDS.JFTCP.MA.A', 'SEDS.JFTCP.MI.A', 'SEDS.JFTCP.MN.A',
+      'SEDS.JFTCP.MS.A', 'SEDS.JFTCP.MO.A', 'SEDS.JFTCP.MT.A', 'SEDS.JFTCP.NE.A', 'SEDS.JFTCP.NV.A', 'SEDS.JFTCP.NH.A', 'SEDS.JFTCP.NJ.A', 'SEDS.JFTCP.NM.A', 'SEDS.JFTCP.NY.A', 'SEDS.JFTCP.NC.A', 'SEDS.JFTCP.ND.A', 'SEDS.JFTCP.OH.A',
+      'SEDS.JFTCP.OK.A', 'SEDS.JFTCP.OR.A', 'SEDS.JFTCP.PA.A', 'SEDS.JFTCP.RI.A', 'SEDS.JFTCP.SC.A', 'SEDS.JFTCP.SD.A', 'SEDS.JFTCP.TN.A', 'SEDS.JFTCP.TX.A', 'SEDS.JFTCP.UT.A', 'SEDS.JFTCP.VT.A', 'SEDS.JFTCP.VA.A', 'SEDS.JFTCP.WA.A',
+      'SEDS.JFTCP.WV.A', 'SEDS.JFTCP.WI.A', 'SEDS.JFTCP.WY.A'
+    ]
+
+    var stateJetFuelConsumptionData = {
+      'SEDS.JFTCP.AL.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.AK.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.AZ.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.AR.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.CA.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.CO.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.CT.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.DE.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.FL.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.GA.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.HI.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.ID.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.IL.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.IN.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.IA.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.KS.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.KY.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.LA.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.ME.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.MD.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.MA.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.MI.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.MN.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.MS.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.MO.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.MT.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.NE.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.NV.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.NH.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.NJ.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.NM.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.NY.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.NC.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.ND.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.OH.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.OK.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.OR.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.PA.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.RI.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.SC.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.SD.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.TN.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.TX.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.UT.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.VT.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.VA.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.WA.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.WV.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.WI.A': {
+        x: [],
+        y: []
+      },
+      'SEDS.JFTCP.WY.A': {
+        x: [],
+        y: []
+      },
+    }
+
+    /* Annual total jet fuel consumption in the United States. */
+    var annualUSJetFuelConsumptionProductionData = {
+      'SEDS.JFTCP.US.A': {
+        x: [],
+        y: []
+      },
+      'PET.M_EPJK_YPB_NUS_MBBLD.A': {
+        x: [],
+        y: []
+      }
+    }
+
+    var monthlyUSJetFuelImportExportIDs = {
+      /* Exports of jet fuel from the United States, monthly. */
+      'PET.MKJEXUS2.M': {
+        x: [],
+        y: []
+      },
+      /* Imports of jet fuel to United States, monthly. */
+      'TOTAL.JFIMPUS.M': {
+        x: [],
+        y: []
+      }
+    }
+
+    var plotAnnualStateJetFuelConsumption = function() {
+
+      var AL = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y,
+        name: 'Alabama',
+        type: 'scatter'
+      };
+
+      var AK = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y,
+        name: 'Alaska',
+        type: 'scatter'
+      };
+
+      var AZ = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y,
+        name: 'Arizona',
+        type: 'scatter'
+      };
+
+      var AR = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y,
+        name: 'Arkansas',
+        type: 'scatter'
+      };
+
+      var CA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y,
+        name: 'California',
+        type: 'scatter'
+      };
+
+      var CO = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y,
+        name: 'Colorado',
+        type: 'scatter'
+      };
+
+      var CT = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y,
+        name: 'Connecticut',
+        type: 'scatter'
+      };
+
+      var DE = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y,
+        name: 'Delaware',
+        type: 'scatter'
+      };
+
+      var FL = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y,
+        name: 'Florida',
+        type: 'scatter'
+      };
+
+      var GA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y,
+        name: 'Georgia',
+        type: 'scatter'
+      };
+
+      var HI = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y,
+        name: 'Hawaii',
+        type: 'scatter'
+      };
+
+      var ID = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y,
+        name: 'Idaho',
+        type: 'scatter'
+      };
+
+      var IL = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y,
+        name: 'Illinois',
+        type: 'scatter'
+      };
+
+      var IN = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y,
+        name: 'Indiana',
+        type: 'scatter'
+      };
+
+      var IA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y,
+        name: 'Iowa',
+        type: 'scatter'
+      };
+
+      var KS = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y,
+        name: 'Kansas',
+        type: 'scatter'
+      };
+
+      var KY = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y,
+        name: 'Kentucky',
+        type: 'scatter'
+      };
+
+      var LA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y,
+        name: 'Louisiana',
+        type: 'scatter'
+      };
+
+      var ME = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y,
+        name: 'Maine',
+        type: 'scatter'
+      };
+
+      var MD = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y,
+        name: 'Maryland',
+        type: 'scatter'
+      };
+
+      var MA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y,
+        name: 'Massachusetts',
+        type: 'scatter'
+      };
+
+      var MI = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y,
+        name: 'Minnesota',
+        type: 'scatter'
+      };
+
+      var MS = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y,
+        name: 'Mississippi',
+        type: 'scatter'
+      };
+
+      var MO = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y,
+        name: 'Missouri',
+        type: 'scatter'
+      };
+
+      var MT = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y,
+        name: 'Montana',
+        type: 'scatter'
+      };
+
+      var NE = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y,
+        name: 'Nebraska',
+        type: 'scatter'
+      };
+
+      var NV = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y,
+        name: 'Nevada',
+        type: 'scatter'
+      };
+
+      var NH = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y,
+        name: 'New Hampshire',
+        type: 'scatter'
+      };
+
+      var NJ = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y,
+        name: 'New Jersey',
+        type: 'scatter'
+      };
+
+      var NM = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y,
+        name: 'New Mexico',
+        type: 'scatter'
+      };
+
+      var NY = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y,
+        name: 'New York',
+        type: 'scatter'
+      };
+
+      var NC = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y,
+        name: 'North Carolina',
+        type: 'scatter'
+      };
+
+      var ND = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y,
+        name: 'North Dakota',
+        type: 'scatter'
+      };
+
+      var OH = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y,
+        name: 'Ohio',
+        type: 'scatter'
+      };
+
+      var OK = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y,
+        name: 'Oklahoma',
+        type: 'scatter'
+      };
+
+      var OR = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y,
+        name: 'Oregon',
+        type: 'scatter'
+      };
+
+      var PA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y,
+        name: 'Pennsylvania',
+        type: 'scatter'
+      };
+
+      var RI = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y,
+        name: 'Rhode Island',
+        type: 'scatter'
+      };
+
+      var SC = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y,
+        name: 'South Carolina',
+        type: 'scatter'
+      };
+
+      var SD = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y,
+        name: 'South Dakota',
+        type: 'scatter'
+      };
+
+      var TN = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y,
+        name: 'Tennessee',
+        type: 'scatter'
+      };
+
+      var TX = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y,
+        name: 'Texas',
+        type: 'scatter'
+      };
+
+      var UT = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y,
+        name: 'Utah',
+        type: 'scatter'
+      };
+
+      var VT = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y,
+        name: 'Vermont',
+        type: 'scatter'
+      };
+
+      var VA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y,
+        name: 'Virginia',
+        type: 'scatter'
+      };
+
+      var WA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y,
+        name: 'Washington',
+        type: 'scatter'
+      };
+
+      var WV = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y,
+        name: 'West Virginia',
+        type: 'scatter'
+      };
+
+      var WI = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y,
+        name: 'Wisconsin',
+        type: 'scatter'
+      };
+
+      var WY = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y,
+        name: 'Wyoming',
+        type: 'scatter'
+      };
+
+      var data = [AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY];
+
+      var layout = {
+        title: 'Annual Jet Fuel Consumption By U.S. State',
+        xaxis: {
+          title: 'Year',
+          titlefont: {
+            family: 'Courier New, monospace',
+            size: 18,
+            color: '#7f7f7f'
+          }
+        },
+        yaxis: {
+          title: 'Thousands of Barrels',
+          titlefont: {
+            family: 'Courier New, monospace',
+            size: 18,
+            color: '#7f7f7f'
+          }
+        },
+      };
+
+      Plotly.newPlot('stateJetFuelConsumptionDiv', data, layout);
+    }
+
+    var getAnnualStateConsumptionAPIData = function() {
+      for (var i = -1; annualStateJetFuelConsumptionIDs.length > i; i++) {
+        var url = 'http://api.eia.gov/series/?api_key=3d9541721290f76e46a2250bcbea2ff3&series_id=' + annualStateJetFuelConsumptionIDs[i] + '&start=20000101&out=json'
+
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.open('GET', url);
+
+        xhttp.send();
+
+        xhttp.addEventListener('load', processResponse);
+
+        var processResponse = function() {
+
+          apidata = JSON.parse(this.response);
+
+          var id = apidata.series[0].series_id;
+
+          /* This loops through all of the state ids and adds them to the appropriate state arrays for annual state jet fuel consumption. */
+          var data = apidata.series[0].data;
+
+          for (var i = 0; i < data.length; i++) {
+            stateJetFuelConsumptionData[id].x.push(data[i][0]);
+            stateJetFuelConsumptionData[id].y.push(data[i][1]);
+          }
+          if (i === data.length) {
+            plotAnnualStateJetFuelConsumption();
+          }
+        }
+      }
+    }
+
+    var getAnnualUSJetFuelConsumptionProductionData = function() {
+      var url = 'http://api.eia.gov/series/?api_key=3d9541721290f76e46a2250bcbea2ff3&series_id=' + 'SEDS.JFTCP.US.A' + '&start=20000101&out=json'
+
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.open('GET', url);
+
+      xhttp.addEventListener('load', processResponseTwo);
+
+      xhttp.send();
+
+      var processResponseTwo = function() {
+        console.log('second api processing');
+        apidata = JSON.parse(this.response);
+
+        var data = apidata.series.data;
+        console.log(data);
+        for (var i = -1; i < data.length; i++) {
+
+          annualUSJetFuelConsumptionProductionData['SEDS.JFTCP.US.A'].x.push(data[i][0]);
+          annualUSJetFuelConsumptionProductionData['SEDS.JFTCP.US.A'].y.push(data[i][1]);
+        }
+      }
+    }
+
+    // var getMonthlyUSJetFuelImportExportAPIData = function() {
+    //   for (var i = -1; USJetFuelIDs.length > i; i++) {
+    //     var url = 'http://api.eia.gov/series/?api_key=3d9541721290f76e46a2250bcbea2ff3&series_id=' + monthlyUSJetFuelImportExportIDs[i] + '&start=20000101&out=json'
+    //
+    //     var xhttp = new XMLHttpRequest();
+    //
+    //     xhttp.open('GET', url);
+    //
+    //     xhttp.send();
+    //
+    //     xhttp.addEventListener('load', processResponse);
+    //
+    //     var processResponse = function() {
+    //       apidata = JSON.parse(this.response);
+    //
+    //       var id = apidata.series[0].series_id;
+    //
+    //       var data = apidata.series[0].data;
+    //
+    //       for (var i = 0; i < data.length; i++) {
+    //         /* Shelve data by index here. */
+    //       }
+    //       if (i === data.length) {
+    //         /* Plot function for US data. */
+    //       }
+    //     }
+    //   }
+    // }
+
+    getAnnualStateConsumptionAPIData();
+    // getAnnualUSJetFuelConsumptionProductionData();
+    // getMonthlyUSJetFuelImportExportAPIData();
+    console.log(stateJetFuelConsumptionData);
+    console.log(annualUSJetFuelConsumptionProductionData);
+  </script>
+</body>
+
+</html>
