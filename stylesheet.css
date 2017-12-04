@@ -4,3 +4,10 @@ body {
   background-color: #FFFFFF;
   color: #22313F;
 }
+
+div.graph {
+}
+
+#stateJetFuelConsumptionPieGraph {
+  margin: auto;
+}
