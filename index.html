@@ -334,12 +334,15 @@
           'Massachusetts', 'Michigan', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Pennsylavania',
           'Rhodie Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
         ],
-        type: 'pie'
+        pull: .2,
+        type: 'pie',
+        textinfo: 'none',
       }];
 
       var layout = {
-        height: 500,
-        width: 1000
+        title: 'Last Year Jet Fuel Consumption by State',
+        height: 700,
+        width: 1200
       };
 
       Plotly.newPlot('stateJetFuelConsumptionPieGraph', data, layout);
@@ -764,8 +767,9 @@
         apidata = JSON.parse(this.response);
 
         var data = apidata.series.data;
-        console.log(data);
+
         for (var i = -1; i < data.length; i++) {
+          console.log(data);
           annualUSJetFuelConsumptionProductionData['SEDS.JFTCP.US.A'].x.push(data[i][0]);
           annualUSJetFuelConsumptionProductionData['SEDS.JFTCP.US.A'].y.push(data[i][1]);
         }
