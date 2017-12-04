@@ -14,7 +14,8 @@
   <div id='intro'>
     <p>Helloooo</p>
   </div>
-  <div id='stateJetFuelConsumptionDiv' style='background-color: #eeeeee;'></div>
+  <div class="graph" id='stateJetFuelConsumptionPieGraph' style='background-color: #eeeeee;'></div>
+  <div class="graph" id='stateJetFuelConsumptionLineGraph' style='background-color: #eeeeee;'></div>
   <script>
     /* For potential second API: https://opensky-network.org/apidoc/rest.html */
 
@@ -312,6 +313,35 @@
         x: [],
         y: []
       }
+    }
+
+    var plotLastYearAnnualStateConsumption = function() {
+      var data = [{
+        values: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        labels: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'PA', 'RI', 'SC',
+          'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        type: 'pie'
+      }];
+
+      var layout = {
+        height: 1000,
+        width: 1000
+      };
+
+      Plotly.newPlot('stateJetFuelConsumptionPieGraph', data, layout);
     }
 
     var plotAnnualStateJetFuelConsumption = function() {
@@ -681,7 +711,7 @@
         },
       };
 
-      Plotly.newPlot('stateJetFuelConsumptionDiv', data, layout);
+      Plotly.newPlot('stateJetFuelConsumptionLineGraph', data, layout);
     }
 
     var getAnnualStateConsumptionAPIData = function() {
@@ -710,6 +740,7 @@
             stateJetFuelConsumptionData[id].y.push(data[i][1]);
           }
           if (i === data.length) {
+            plotLastYearAnnualStateConsumption();
             plotAnnualStateJetFuelConsumption();
           }
         }
@@ -734,7 +765,6 @@
         var data = apidata.series.data;
         console.log(data);
         for (var i = -1; i < data.length; i++) {
-
           annualUSJetFuelConsumptionProductionData['SEDS.JFTCP.US.A'].x.push(data[i][0]);
           annualUSJetFuelConsumptionProductionData['SEDS.JFTCP.US.A'].y.push(data[i][1]);
         }
@@ -771,7 +801,7 @@
     // }
 
     getAnnualStateConsumptionAPIData();
-    // getAnnualUSJetFuelConsumptionProductionData();
+    getAnnualUSJetFuelConsumptionProductionData();
     // getMonthlyUSJetFuelImportExportAPIData();
     console.log(stateJetFuelConsumptionData);
     console.log(annualUSJetFuelConsumptionProductionData);
