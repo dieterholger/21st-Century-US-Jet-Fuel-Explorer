@@ -508,6 +508,13 @@
         type: 'scatter'
       };
 
+      var MN = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y,
+        name: 'Minnesota',
+        type: 'scatter'
+      };
+
       var MS = {
         x: stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].x,
         y: stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y,
@@ -697,7 +704,7 @@
         type: 'scatter'
       };
 
-      var data = [AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY];
+      var data = [AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY];
 
       var layout = {
         title: 'Annual Jet Fuel Consumption By U.S. State',
@@ -729,8 +736,8 @@
       var data = [{
         type: 'choropleth',
         locationmode: 'USA-states',
-        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'PA', 'RI',
-          'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR',
+          'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
         ],
         z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
           stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
@@ -752,7 +759,7 @@
         text: ['Alabama', 'Arkansas', 'Arizona', 'Arizona', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
           'Massachusetts', 'Michigan', 'Minnesota',
           'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylavania',
-          'Rhodie Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+          'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
         ],
         colorscale: [
           [0, 'rgb(242,240,247)'],
@@ -816,8 +823,8 @@
             stateJetFuelConsumptionData[id].y.push(data[i][1]);
           }
           if (i === data.length) {
-            plotLastYearAnnualStateConsumption();
-            plotAnnualStateJetFuelConsumption();
+            // plotLastYearAnnualStateConsumption();
+            // plotAnnualStateJetFuelConsumption();
             plotAnnualStateJetFuelConsumptionChoropleth();
           }
         }
