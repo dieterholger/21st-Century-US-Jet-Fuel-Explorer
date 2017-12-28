@@ -295,7 +295,7 @@
 
     var plotAnnualStateJetFuelConsumptionChoropleth = function() {
 
-      var data = [{
+      Plotly.newPlot('stateJetFuelConsumptionChoropleth', [{
         type: 'choropleth',
         locationmode: 'USA-states',
         locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
@@ -318,7 +318,7 @@
         ],
         zmin: 0,
         zmax: 200000,
-        text: 'Barrrels per Day',
+        text: 'Barrrels per Year',
         hoverinfo: 'location+z+text',
         colorscale: [
           [0, 'rgb(242,240,247)'],
@@ -338,21 +338,8 @@
             width: 2
           }
         }
-      }];
 
-      var layout = {
-        height: 700,
-        width: 1200,
-        geo: {
-          scope: 'usa',
-          showlakes: true,
-          lakecolor: 'rgb(255,255,255)'
-        }
-      };
-
-      Plotly.plot('stateJetFuelConsumptionChoropleth', data, layout, {
-        showLink: false
-      });
+      }])
     }
 
     /* Function for generating overall consumption since 2000. */
