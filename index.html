@@ -342,18 +342,13 @@
       }])
     }
 
-    /* Function for generating overall consumption since 2000. */
-
-    var calcTotalStateConsumption = function(array) {
-      result = Plotly.d3.sum(array) * 365;
-      return result
-    }
-
     /* Bar graph settings. */
 
     var plotAnnualStateJetFuelConsumptionBar = function() {
 
-      var data = [{
+      Plotly.newPlot('stateJetFuelConsumptionBar', [{
+        type: 'bar',
+        orientation: 'h',
         x: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
           stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
           stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
@@ -374,18 +369,13 @@
           'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas',
           'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
         ],
-        orientation: "h",
-        type: "bar",
-      }];
+        transforms: [{
+          type: 'sort',
+          target: 'x',
+          order: 'ascending'
+        }]
+      }])
 
-      var layout = {
-        title: 'Jet Fuel Consumption By State',
-        height: 1200,
-        width: 1000,
-        barmode: 'stack'
-      };
-
-      Plotly.newPlot('stateJetFuelConsumptionBar', data, layout);
     }
 
     /* Line graph settings. */
@@ -796,8 +786,8 @@
           }
           if (i === data.length) {
             // plotAnnualStateJetFuelConsumptionLine();
-            plotAnnualStateJetFuelConsumptionChoropleth();
-            // plotAnnualStateJetFuelConsumptionBar();
+            // plotAnnualStateJetFuelConsumptionChoropleth();
+            plotAnnualStateJetFuelConsumptionBar();
           }
         }
       }
