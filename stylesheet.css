@@ -5,6 +5,8 @@ body {
   color: #22313F;
 }
 
+/* Settings for graph divs. */
+
 div.graph {
   margin-right: 10vw;
   margin-left: 10vw;

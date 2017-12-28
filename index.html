@@ -10,6 +10,11 @@
 </head>
 
 <body>
+  <!-- Loading animations for page: . -->
+
+
+  <!-- Animated title -->
+
   <!-- By giving a div an inline background color property you can change the background color of Plot.ly graphs. Reference: https://codepen.io/etpinard/pen/JXagKL -->
   <div id='intro'>
     <p>Helloooo</p>
@@ -317,7 +322,7 @@
           stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
         ],
         zmin: 0,
-        zmax: 200000,
+        zmax: 125000,
         text: 'Barrrels per Year',
         hoverinfo: 'location+z+text',
         colorscale: [
@@ -341,6 +346,7 @@
 
       }])
     }
+
 
     /* Bar graph settings. */
 
@@ -373,9 +379,13 @@
           type: 'sort',
           target: 'x',
           order: 'ascending'
+        }, {
+          type: 'filter',
+          target: 'x',
+          operation: '>',
+          value: 10000
         }]
       }])
-
     }
 
     /* Line graph settings. */
@@ -786,7 +796,7 @@
           }
           if (i === data.length) {
             // plotAnnualStateJetFuelConsumptionLine();
-            // plotAnnualStateJetFuelConsumptionChoropleth();
+            plotAnnualStateJetFuelConsumptionChoropleth();
             plotAnnualStateJetFuelConsumptionBar();
           }
         }
