@@ -21,7 +21,7 @@
     <p>The United States consumes more jet fuel than any other country. They range from the sheer number of flights a day to the presence of military bases. But which parts of the U.S. use the most jet fuel?
     </p>
   </div>
-  <div class='graph' id='stateJetFuelConsumptionChoropleth'></div>.
+  <div class='graph' id='stateJetFuelConsumptionChoropleth'></div>
   <div class='graph' id='stateJetFuelConsumptionScatter'></div>
   <div class='graph' id='stateJetFuelConsumptionBar'></div>
   <div class='graph' id='stateJetFuelConsumptionLineGraph'></div>
@@ -84,10 +84,9 @@
      Wisconsin [48]
      Wyoming [49] */
 
-    stateNames = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
-      'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri',
-      'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas',
-      'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+    stateNames = ['Alabama', 'Alaska', 'Arkansas', 'Arizona', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
+      'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma',
+      'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
     ]
 
     annualStateJetFuelConsumptionIDs = ['SEDS.JFTCP.AL.A', 'SEDS.JFTCP.AK.A', 'SEDS.JFTCP.AR.A', 'SEDS.JFTCP.AZ.A', 'SEDS.JFTCP.CA.A', 'SEDS.JFTCP.CO.A', 'SEDS.JFTCP.CT.A', 'SEDS.JFTCP.DE.A', 'SEDS.JFTCP.FL.A', 'SEDS.JFTCP.GA.A',
@@ -328,7 +327,7 @@
         ],
         zmin: 0,
         zmax: 120000000,
-        text: 'Barrels per Year',
+        text: 'Barrels',
         hoverinfo: 'z+text+location',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
@@ -382,6 +381,8 @@
           stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
         ],
         y: stateNames,
+        text: 'Barrels',
+        hoverinfo: 'x+text',
         marker: {
           color: 'rgb(1,50,67)'
         },
