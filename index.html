@@ -17,16 +17,13 @@
 
   <!-- By giving a div an inline background color property you can change the background color of Plot.ly graphs. Reference: https://codepen.io/etpinard/pen/JXagKL -->
   <div id='intro'>
-    <p>Helloooo</p>
+    <p>Jet fuel is one of the most precious commodities on earth. Without it, we wouldn't be able to quickly transport goods or reach loved ones abroad.</p>
+    <p>The United States is the largest consumer of jet fuel in the world. Various factors play into jet fuel consumption. These range from the sheer number of flights to the presence of military bases. But which parts of the U.S. use the most?</p>
   </div>
   <div class='graph' id='stateJetFuelConsumptionChoropleth'></div>
   <div class='graph' id='stateJetFuelConsumptionBar'></div>
   <div class='graph' id='stateJetFuelConsumptionLineGraph'></div>
   <script>
-    /* For potential second API: https://opensky-network.org/apidoc/rest.html */
-
-    /* 21st century aviation gasoline consumption in the United States. */
-
     /* API documentation: https://www.eia.gov/opendata/ */
 
     /* API Key: 3d9541721290f76e46a2250bcbea2ff3 */
@@ -296,6 +293,16 @@
       },
     }
 
+    /* Convert units. Reference: https://stackoverflow.com/questions/48071075/multiply-all-values-in-arrays-in-object-by-single-value/ */
+
+    var convertBarrelUnits = function() {
+      let multiplier = 1000;
+
+      Object.values(stateJetFuelConsumptionData).forEach(item => {
+        item.y = item.y.map(number => number * multiplier);
+      });
+    }
+
     /* Settings for Choropleth. */
 
     var plotAnnualStateJetFuelConsumptionChoropleth = function() {
@@ -322,7 +329,7 @@
           stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
         ],
         zmin: 0,
-        zmax: 125000,
+        zmax: 10000000,
         text: 'Barrrels per Year',
         hoverinfo: 'location+z+text',
         colorscale: [
@@ -334,8 +341,7 @@
           [1, 'rgb(84,39,143)']
         ],
         colorbar: {
-          title: 'Barrels Per Day',
-          thickness: 10
+          thickness: 20
         },
         marker: {
           line: {
@@ -346,7 +352,6 @@
 
       }])
     }
-
 
     /* Bar graph settings. */
 
@@ -383,9 +388,12 @@
           type: 'filter',
           target: 'x',
           operation: '>',
-          value: 10000
+          value: 15000
         }]
-      }])
+      }], {
+        width: 1200,
+        height: 700
+      })
     }
 
     /* Line graph settings. */
@@ -788,6 +796,7 @@
           var id = apidata.series[0].series_id;
 
           /* This loops through all of the state ids and adds them to the appropriate state arrays for annual state jet fuel consumption. */
+
           var data = apidata.series[0].data;
 
           for (var i = 0; i < data.length; i++) {
@@ -795,15 +804,17 @@
             stateJetFuelConsumptionData[id].y.push(data[i][1]);
           }
           if (i === data.length) {
-            // plotAnnualStateJetFuelConsumptionLine();
+            convertBarrelUnits();
             plotAnnualStateJetFuelConsumptionChoropleth();
-            plotAnnualStateJetFuelConsumptionBar();
+            // plotAnnualStateJetFuelConsumptionLine();
+            // plotAnnualStateJetFuelConsumptionBar();
           }
         }
       }
     }
 
     getAnnualStateConsumptionAPIData();
+    console.log(stateJetFuelConsumptionData);
   </script>
 </body>
 
