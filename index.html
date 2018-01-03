@@ -293,16 +293,6 @@
       },
     }
 
-    /* Convert units. Reference: https://stackoverflow.com/questions/48071075/multiply-all-values-in-arrays-in-object-by-single-value/ */
-
-    var convertBarrelUnits = function() {
-      let multiplier = 1000;
-
-      Object.values(stateJetFuelConsumptionData).forEach(item => {
-        item.y = item.y.map(number => number * multiplier);
-      });
-    }
-
     /* Settings for Choropleth. */
 
     var plotAnnualStateJetFuelConsumptionChoropleth = function() {
@@ -329,7 +319,7 @@
           stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
         ],
         zmin: 0,
-        zmax: 10000000,
+        zmax: 120000000,
         text: 'Barrrels per Year',
         hoverinfo: 'location+z+text',
         colorscale: [
@@ -388,7 +378,7 @@
           type: 'filter',
           target: 'x',
           operation: '>',
-          value: 15000
+          value: 10000000
         }]
       }], {
         width: 1200,
@@ -801,13 +791,13 @@
 
           for (var i = 0; i < data.length; i++) {
             stateJetFuelConsumptionData[id].x.push(data[i][0]);
-            stateJetFuelConsumptionData[id].y.push(data[i][1]);
+            /* Multiply each value by 1,000 to convert units. */
+            stateJetFuelConsumptionData[id].y.push(data[i][1] * 1000);
           }
           if (i === data.length) {
-            convertBarrelUnits();
             plotAnnualStateJetFuelConsumptionChoropleth();
+            plotAnnualStateJetFuelConsumptionBar();
             // plotAnnualStateJetFuelConsumptionLine();
-            // plotAnnualStateJetFuelConsumptionBar();
           }
         }
       }
