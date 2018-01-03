@@ -18,9 +18,12 @@
   <!-- By giving a div an inline background color property you can change the background color of Plot.ly graphs. Reference: https://codepen.io/etpinard/pen/JXagKL -->
   <div id='intro'>
     <p>Jet fuel is one of the most precious commodities on earth. Without it, we wouldn't be able to quickly transport goods or reach loved ones abroad.</p>
-    <p>The United States is the largest consumer of jet fuel in the world. Various factors play into jet fuel consumption. These range from the sheer number of flights to the presence of military bases. But which parts of the U.S. use the most?</p>
+    <p>The United States is the largest consumer of jet fuel in the world. Various factors play into jet fuel consumption. These range from the sheer number of flights a day to the presence of military bases. But which parts of the U.S. use the most jet
+      fuel?
+    </p>
   </div>
   <div class='graph' id='stateJetFuelConsumptionChoropleth'></div>
+  <div class='graph' id='stateJetFuelConsumptionScatter'></div>
   <div class='graph' id='stateJetFuelConsumptionBar'></div>
   <div class='graph' id='stateJetFuelConsumptionLineGraph'></div>
   <script>
@@ -81,6 +84,12 @@
      West Virginia [47]
      Wisconsin [48]
      Wyoming [49] */
+
+    stateNames = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
+      'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri',
+      'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas',
+      'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+    ]
 
     annualStateJetFuelConsumptionIDs = ['SEDS.JFTCP.AL.A', 'SEDS.JFTCP.AK.A', 'SEDS.JFTCP.AR.A', 'SEDS.JFTCP.AZ.A', 'SEDS.JFTCP.CA.A', 'SEDS.JFTCP.CO.A', 'SEDS.JFTCP.CT.A', 'SEDS.JFTCP.DE.A', 'SEDS.JFTCP.FL.A', 'SEDS.JFTCP.GA.A',
       'SEDS.JFTCP.HI.A',
@@ -319,16 +328,13 @@
           stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
         ],
         zmin: 0,
-        zmax: 120000000,
-        text: 'Barrrels per Year',
-        hoverinfo: 'location+z+text',
+        zmax: 150000000,
+        text: 'Barrels per Year',
+        hoverinfo: 'z+text+location',
         colorscale: [
-          [0, 'rgb(242,240,247)'],
-          [0.2, 'rgb(218,218,235)'],
-          [0.4, 'rgb(188,189,220)'],
-          [0.6, 'rgb(158,154,200)'],
-          [0.8, 'rgb(117,107,177)'],
-          [1, 'rgb(84,39,143)']
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
         ],
         colorbar: {
           thickness: 20
@@ -339,8 +345,19 @@
             width: 2
           }
         }
-
-      }])
+      }], {
+        geo: {
+          scope: 'usa',
+          lonaxis: {
+            range: []
+          },
+          lataxis: {
+            range: []
+          }
+        },
+        width: 1200,
+        height: 700
+      })
     }
 
     /* Bar graph settings. */
@@ -365,11 +382,10 @@
           stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
           stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
         ],
-        y: ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
-          'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri',
-          'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas',
-          'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-        ],
+        y: stateNames,
+        marker: {
+          color: 'rgb(1,50,67)'
+        },
         transforms: [{
           type: 'sort',
           target: 'x',
@@ -384,6 +400,23 @@
         width: 1200,
         height: 700
       })
+    }
+
+    /* Scatter plot settings. */
+
+    var plotAnnualStateJetFuelConsumptionScatter = function() {
+
+      Plotly.plot('stateJetFuelConsumptionScatter', [{
+        mode: 'markers',
+        x: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].x, stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].x],
+        y: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y],
+        marker: {
+          size: [10, 20, 30],
+          color: [1, 2, 3],
+          colorbar: {}
+        }
+      }])
+
     }
 
     /* Line graph settings. */
@@ -767,6 +800,8 @@
       Plotly.newPlot('stateJetFuelConsumptionLineGraph', data, layout);
     }
 
+
+
     var getAnnualStateConsumptionAPIData = function() {
       for (var i = -1; annualStateJetFuelConsumptionIDs.length > i; i++) {
         var url = 'http://api.eia.gov/series/?api_key=3d9541721290f76e46a2250bcbea2ff3&series_id=' + annualStateJetFuelConsumptionIDs[i] + '&start=20000101&out=json'
@@ -796,7 +831,8 @@
           }
           if (i === data.length) {
             plotAnnualStateJetFuelConsumptionChoropleth();
-            plotAnnualStateJetFuelConsumptionBar();
+            // plotAnnualStateJetFuelConsumptionScatter();
+            // plotAnnualStateJetFuelConsumptionBar();
             // plotAnnualStateJetFuelConsumptionLine();
           }
         }
@@ -804,7 +840,6 @@
     }
 
     getAnnualStateConsumptionAPIData();
-    console.log(stateJetFuelConsumptionData);
   </script>
 </body>
 
