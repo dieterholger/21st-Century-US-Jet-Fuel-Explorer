@@ -394,10 +394,13 @@
           target: 'x',
           operation: '>',
           value: 10000000
-        }]
+        }],
       }], {
         width: 1200,
-        height: 700
+        height: 700,
+        margin: {
+          l: 90
+        }
       })
     }
 
@@ -842,9 +845,9 @@
             stateJetFuelConsumptionData[id].y.push(data[i][1] * 1000);
           }
           if (i === data.length) {
-            // plotAnnualStateJetFuelConsumptionChoropleth();
-            plotAnnualStateJetFuelConsumptionScatter();
-            // plotAnnualStateJetFuelConsumptionBar();
+            plotAnnualStateJetFuelConsumptionChoropleth();
+            // plotAnnualStateJetFuelConsumptionScatter();
+            plotAnnualStateJetFuelConsumptionBar();
             // plotAnnualStateJetFuelConsumptionLine();
           }
         }
