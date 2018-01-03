@@ -17,9 +17,8 @@
 
   <!-- By giving a div an inline background color property you can change the background color of Plot.ly graphs. Reference: https://codepen.io/etpinard/pen/JXagKL -->
   <div id='intro'>
-    <p>Jet fuel is one of the most precious commodities on earth. Without it, we wouldn't be able to quickly transport goods or reach loved ones abroad.</p>
-    <p>The United States is the largest consumer of jet fuel in the world. Various factors play into jet fuel consumption. These range from the sheer number of flights a day to the presence of military bases. But which parts of the U.S. use the most jet
-      fuel?
+    <p>Jet fuel is one of the most precious commodities in the world. It powers the jumbo jets that fly millions of people a day.</p>
+    <p>The United States consumes more jet fuel than any other country. They range from the sheer number of flights a day to the presence of military bases. But which parts of the U.S. use the most jet fuel?
     </p>
   </div>
   <div class='graph' id='stateJetFuelConsumptionChoropleth'></div>
@@ -328,7 +327,7 @@
           stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
         ],
         zmin: 0,
-        zmax: 150000000,
+        zmax: 120000000,
         text: 'Barrels per Year',
         hoverinfo: 'z+text+location',
         colorscale: [
@@ -355,7 +354,7 @@
             range: []
           }
         },
-        width: 1200,
+        width: 1100,
         height: 700
       })
     }
@@ -408,14 +407,37 @@
 
       Plotly.plot('stateJetFuelConsumptionScatter', [{
         mode: 'markers',
-        x: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].x, stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].x],
-        y: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y],
+        showlegend: false,
+        y: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y,
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y
+        ],
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].x,
         marker: {
-          size: [10, 20, 30],
-          color: [1, 2, 3],
-          colorbar: {}
+          size: [10, 20, 30, 40, 60, 70],
+          color: [0, 20000000, 40000000, 60000000, 80000000, 100000000, 120000000],
+          colorbar: {},
+          colorscale: [
+            [0, 'rgb(228, 241, 254)'],
+            [0.5, 'rgb(103, 128, 159)'],
+            [1, 'rgb(1,50,67)'],
+          ]
         }
-      }])
+      }], {
+        width: 1200,
+        height: 700
+      })
 
     }
 
@@ -780,20 +802,10 @@
         height: 700,
         width: 1200,
         xaxis: {
-          title: 'Year',
-          titlefont: {
-            family: 'Courier New, monospace',
-            size: 18,
-            color: '#7f7f7f'
-          }
+          title: 'Year'
         },
         yaxis: {
-          title: 'Thousands of scatterrels',
-          titlefont: {
-            family: 'Courier New, monospace',
-            size: 18,
-            color: '#7f7f7f'
-          }
+          title: 'Thousands of scatterrels'
         },
       };
 
@@ -830,8 +842,8 @@
             stateJetFuelConsumptionData[id].y.push(data[i][1] * 1000);
           }
           if (i === data.length) {
-            plotAnnualStateJetFuelConsumptionChoropleth();
-            // plotAnnualStateJetFuelConsumptionScatter();
+            // plotAnnualStateJetFuelConsumptionChoropleth();
+            plotAnnualStateJetFuelConsumptionScatter();
             // plotAnnualStateJetFuelConsumptionBar();
             // plotAnnualStateJetFuelConsumptionLine();
           }
