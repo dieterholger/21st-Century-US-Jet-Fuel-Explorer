@@ -982,7 +982,7 @@
           stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
         ],
         name: '2016',
-        visible: false,
+        visible: true,
         zmin: 0,
         zmax: 120000000,
         text: 'Barrels',
@@ -1003,22 +1003,86 @@
         }
       }], {
         sliders: [{
+          active: 16,
+          pad: {
+            t: 40
+          },
+          currentvalue: {
+            xanchor: 'center',
+            prefix: 'Year: ',
+            font: {
+              color: '#22313F',
+              size: 25
+            }
+          },
           steps: [{
             label: '2000',
             method: 'restyle',
-            args: ['visible', [true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            args: ['visible', [true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
           }, {
             label: '2001',
             method: 'restyle',
-            args: ['visible', [false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            args: ['visible', [false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
           }, {
             label: '2002',
             method: 'restyle',
-            args: ['visible', [false, false, false, true]]
+            args: ['visible', [false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
           }, {
             label: '2003',
             method: 'restyle',
-            args: ['visible', [false, false, false, true]]
+            args: ['visible', [false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+          }, {
+            label: '2004',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false]]
+          }, {
+            label: '2005',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false]]
+          }, {
+            label: '2006',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false]]
+          }, {
+            label: '2007',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false]]
+          }, {
+            label: '2008',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false]]
+          }, {
+            label: '2009',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false]]
+          }, {
+            label: '2010',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false]]
+          }, {
+            label: '2011',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false]]
+          }, {
+            label: '2012',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false]]
+          }, {
+            label: '2013',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false]]
+          }, {
+            label: '2014',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false]]
+          }, {
+            label: '2015',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false]]
+          }, {
+            label: '2016',
+            method: 'restyle',
+            args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true]]
           }]
         }],
         geo: {
