@@ -327,6 +327,648 @@
         ],
         zmin: 0,
         zmax: 120000000,
+        name: '2000',
+        visible: true,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2001',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2002',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2003',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2004',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2005',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2006',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2007',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2008',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2009',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2010',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2011',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2012',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2013',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2014',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2015',
+        visible: false,
+        text: 'Barrels',
+        hoverinfo: 'z+text+location',
+        colorscale: [
+          [0, 'rgb(228, 241, 254)'],
+          [0.5, 'rgb(103, 128, 159)'],
+          [1, 'rgb(1,50,67)'],
+        ],
+        colorbar: {
+          thickness: 20
+        },
+        marker: {
+          line: {
+            color: 'rgb(255,255,255)',
+            width: 2
+          }
+        },
+        type: 'choropleth',
+        locationmode: 'USA-states',
+        locations: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK',
+          'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+        ],
+        z: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y[0],
+          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
+        ],
+        zmin: 0,
+        zmax: 120000000,
+        name: '2016',
+        visible: false,
         text: 'Barrels',
         hoverinfo: 'z+text+location',
         colorscale: [
@@ -344,6 +986,103 @@
           }
         }
       }], {
+        sliders: [{
+          active: 16,
+          pad: {
+            t: 40
+          },
+          currentvalue: {
+            xanchor: 'center',
+            prefix: 'Year: ',
+            font: {
+              color: '#22313F',
+              size: 25
+            }
+          },
+          steps: [{
+              label: '2000',
+              method: 'restyle',
+              args: ['visible', [true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            }, {
+              label: '2001',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            }, {
+              label: '2002',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            }, {
+              label: '2003',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2004',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2005',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2006',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2007',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2008',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2009',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2010',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2011',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2012',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2013',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2014',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2015',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            },
+            {
+              label: '2016',
+              method: 'restyle',
+              args: ['visible', [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]]
+            }
+          ]
+        }],
         geo: {
           scope: 'usa',
           lonaxis: {
@@ -405,45 +1144,6 @@
       })
     }
 
-    /* Scatter plot settings. */
-
-    var plotAnnualStateJetFuelConsumptionScatter = function() {
-
-      Plotly.plot('stateJetFuelConsumptionScatter', [{
-        mode: 'markers',
-        showlegend: false,
-        y: [stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y,
-          stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y, stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y
-        ],
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].x,
-        marker: {
-          size: [10, 20, 30, 40, 60, 70],
-          color: [0, 20000000, 40000000, 60000000, 80000000, 100000000, 120000000],
-          colorbar: {},
-          colorscale: [
-            [0, 'rgb(228, 241, 254)'],
-            [0.5, 'rgb(103, 128, 159)'],
-            [1, 'rgb(1,50,67)'],
-          ]
-        }
-      }], {
-        width: 1200,
-        height: 700
-      })
-
-    }
 
     /* Line graph settings. */
 
@@ -481,7 +1181,7 @@
         x: stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].x,
         y: stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y,
         name: 'California',
-        type: 'scatter'
+        tyoe: 'scatter',
       };
 
       var CO = {
@@ -802,6 +1502,7 @@
       var data = [AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY];
 
       var layout = {
+        showlegend: false,
         title: 'Annual Jet Fuel Consumption By U.S. State',
         height: 700,
         width: 1200,
@@ -809,7 +1510,7 @@
           title: 'Year'
         },
         yaxis: {
-          title: 'Thousands of scatterrels'
+          title: 'Barrels'
         },
       };
 
@@ -847,8 +1548,7 @@
           }
           if (i === data.length) {
             plotAnnualStateJetFuelConsumptionChoropleth();
-            // plotAnnualStateJetFuelConsumptionScatter();
-            plotAnnualStateJetFuelConsumptionBar();
+            // plotAnnualStateJetFuelConsumptionBar();
             // plotAnnualStateJetFuelConsumptionLine();
           }
         }
