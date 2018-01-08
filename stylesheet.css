@@ -12,7 +12,7 @@ div.graph {
   margin-left: 10vw;
 }
 
-/* Use viewport, rems, and calc for responsivity. */
+/* Use viewport, rems, and calc for responsivity. Letter-spacing for clean font effect. */
 
 p {
 font-size: calc(1.1rem + 0.25vw);
