@@ -3,6 +3,7 @@
 body {
   background-color: #FFFFFF;
   color: #22313F;
+  font-family: Helvetica, Georgia;
 }
 
 /* Settings for graph divs. */
@@ -12,7 +13,24 @@ div.graph {
   margin-left: 10vw;
 }
 
-h1 {
-  margin-right: 10vw;
-  margin-left: 10vw;
+p {
+font-size: calc(1.1rem + 0.25vw);
+margin-top: 2vh;
+margin-right: 20vw;
+margin-left: 20vw;
+letter-spacing: .1vw;
+padding: .5vw;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+letter-spacing: .1vw;
+text-align: center;
+margin-top: 10vh;
+margin-right: 10vw;
+margin-left: 10vw;
+padding: .5vw;
 }

@@ -3,17 +3,18 @@
 
 <head>
   <meta charset='utf-8'>
-  <title>21st Century Jet Fuel Explorer</title>
+  <title>USA 21st Century Jet Fuel Explorer</title>
   <link href='stylesheet.css' rel='stylesheet'>
   <script src='plotly-latest.min.js'></script>
 </head>
 
 <body>
-  <h1>This is how much jet fuel each USA state has used in the 21st Century.</h1>
+  <p>More than 2 million people fly every day in 21st Century America, according to the <a href='https://www.faa.gov/air_traffic/by_the_numbers/'>Federal Aviation Administration</a>. Consumption of jet fuel is an indicator of where people are flying to and
+    from the most.</p>
+  <p>The US Energy Information Administration reports the amount of jet fuel consumed in each of the USA's 50 states by year. The following interactives display the most recent data from the <a href='https://www.eia.gov/opendata/'>EIA API</a>.</p>
+  <h2>This map shows how many barrels of jet fuel does each US state consumes a year. Slide at the bottom to change the year. Hover for data.</h2>
   <div class='graph' id='stateJetFuelConsumptionChoropleth'></div>
-  <div class='graph' id='stateJetFuelConsumptionScatter'></div>
-  <h1>These US states used more than 10 million barrels of jet fuel last year.</h1>
-  <div class='graph' id='stateJetFuelConsumptionBar'></div>
+  <h2>This timeline shows up to 30 states at a time. Click on the right to add or remove a state. Hover for data.</h2>
   <div class='graph' id='stateJetFuelConsumptionLineGraph'></div>
   <script>
     /* API documentation: https://www.eia.gov/opendata/ */
@@ -264,11 +265,10 @@
         visible: true,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -305,11 +305,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -346,11 +345,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -387,11 +385,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -428,11 +425,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -469,11 +465,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -510,11 +505,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -551,11 +545,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -592,11 +585,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -633,11 +625,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -674,11 +665,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -715,11 +705,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -756,11 +745,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -797,11 +785,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -838,11 +825,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -879,11 +865,10 @@
         visible: false,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -917,14 +902,14 @@
           stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y[0], stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y[0]
         ],
         name: '2016',
+        title: 'This timeline shows up to 30 states at a time. Click on the right to add or remove a state.',
         visible: true,
         zmin: 0,
         zmax: 150000000,
-        text: 'Barrels',
-        hoverinfo: 'z+text+location',
+        text: stateNames,
+        hoverinfo: 'z+text',
         colorscale: [
           [0, 'rgb(228, 241, 254)'],
-          [0.5, 'rgb(103, 128, 159)'],
           [1, 'rgb(1,50,67)']
         ],
         colorbar: {
@@ -1033,7 +1018,678 @@
       })
     }
 
-    /* Bar graph settings. */
+
+    /* Line graph settings. */
+
+    var plotAnnualStateJetFuelConsumptionLine = function() {
+
+      var AL = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y,
+        name: 'Alabama',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var AK = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y,
+        name: 'Alaska',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var AZ = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y,
+        name: 'Arizona',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var AR = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y,
+        name: 'Arkansas',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var CA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y,
+        name: 'California',
+        tyoe: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var CO = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y,
+        name: 'Colorado',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var CT = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y,
+        name: 'Connecticut',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var DE = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y,
+        name: 'Delaware',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var FL = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y,
+        name: 'Florida',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var GA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y,
+        name: 'Georgia',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var HI = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y,
+        name: 'Hawaii',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var ID = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y,
+        name: 'Idaho',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var IL = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y,
+        name: 'Illinois',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var IN = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y,
+        name: 'Indiana',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var IA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y,
+        name: 'Iowa',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var KS = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y,
+        name: 'Kansas',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var KY = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y,
+        name: 'Kentucky',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var LA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y,
+        name: 'Louisiana',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var ME = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y,
+        name: 'Maine',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var MD = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y,
+        name: 'Maryland',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var MA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y,
+        name: 'Massachusetts',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var MI = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y,
+        name: 'Minnesota',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var MN = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y,
+        name: 'Minnesota',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var MS = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y,
+        name: 'Mississippi',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var MO = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y,
+        name: 'Missouri',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var MT = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y,
+        name: 'Montana',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var NE = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y,
+        name: 'Nebraska',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var NV = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y,
+        name: 'Nevada',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var NH = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y,
+        name: 'New Hampshire',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var NJ = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y,
+        name: 'New Jersey',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var NM = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y,
+        name: 'New Mexico',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var NY = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y,
+        name: 'New York',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var NC = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y,
+        name: 'North Carolina',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var ND = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y,
+        name: 'North Dakota',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var OH = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y,
+        name: 'Ohio',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var OK = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y,
+        name: 'Oklahoma',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var OR = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y,
+        name: 'Oregon',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var PA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y,
+        name: 'Pennsylvania',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var RI = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y,
+        name: 'Rhode Island',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var SC = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y,
+        name: 'South Carolina',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var SD = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y,
+        name: 'South Dakota',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var TN = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y,
+        name: 'Tennessee',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var TX = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y,
+        name: 'Texas',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var UT = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y,
+        name: 'Utah',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var VT = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y,
+        name: 'Vermont',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var VA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y,
+        name: 'Virginia',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var WA = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y,
+        name: 'Washington',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var WV = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y,
+        name: 'West Virginia',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var WI = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y,
+        name: 'Wisconsin',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var WY = {
+        x: stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].x,
+        y: stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y,
+        name: 'Wyoming',
+        type: 'scatter',
+        marker: {
+          color: 'rgb(103, 128, 159)'
+        },
+        hoverlabel: {
+          bgcolor: 'rgb(1,50,67)'
+        }
+      };
+
+      var data = [AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY];
+
+      var layout = {
+        height: 825,
+        width: 1200,
+        xaxis: {
+          title: 'Year'
+        },
+        yaxis: {
+          title: 'Barrels'
+        },
+      };
+
+      Plotly.newPlot('stateJetFuelConsumptionLineGraph', data, layout);
+    }
+
+    /* Bar graph settings. The bar chart is not operational. */
 
     var plotAnnualStateJetFuelConsumptionBar = function() {
 
@@ -1080,379 +1736,6 @@
       })
     }
 
-
-    /* Line graph settings. */
-
-    var plotAnnualStateJetFuelConsumptionLine = function() {
-
-      var AL = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.AL.A'].y,
-        name: 'Alabama',
-        type: 'scatter'
-      };
-
-      var AK = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.AK.A'].y,
-        name: 'Alaska',
-        type: 'scatter'
-      };
-
-      var AZ = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.AZ.A'].y,
-        name: 'Arizona',
-        type: 'scatter'
-      };
-
-      var AR = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.AR.A'].y,
-        name: 'Arkansas',
-        type: 'scatter'
-      };
-
-      var CA = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.CA.A'].y,
-        name: 'California',
-        tyoe: 'scatter',
-      };
-
-      var CO = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.CO.A'].y,
-        name: 'Colorado',
-        type: 'scatter'
-      };
-
-      var CT = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.CT.A'].y,
-        name: 'Connecticut',
-        type: 'scatter'
-      };
-
-      var DE = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.DE.A'].y,
-        name: 'Delaware',
-        type: 'scatter'
-      };
-
-      var FL = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.FL.A'].y,
-        name: 'Florida',
-        type: 'scatter'
-      };
-
-      var GA = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.GA.A'].y,
-        name: 'Georgia',
-        type: 'scatter'
-      };
-
-      var HI = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.HI.A'].y,
-        name: 'Hawaii',
-        type: 'scatter'
-      };
-
-      var ID = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.ID.A'].y,
-        name: 'Idaho',
-        type: 'scatter'
-      };
-
-      var IL = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.IL.A'].y,
-        name: 'Illinois',
-        type: 'scatter'
-      };
-
-      var IN = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.IN.A'].y,
-        name: 'Indiana',
-        type: 'scatter'
-      };
-
-      var IA = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.IA.A'].y,
-        name: 'Iowa',
-        type: 'scatter'
-      };
-
-      var KS = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.KS.A'].y,
-        name: 'Kansas',
-        type: 'scatter'
-      };
-
-      var KY = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.KY.A'].y,
-        name: 'Kentucky',
-        type: 'scatter'
-      };
-
-      var LA = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.LA.A'].y,
-        name: 'Louisiana',
-        type: 'scatter'
-      };
-
-      var ME = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.ME.A'].y,
-        name: 'Maine',
-        type: 'scatter'
-      };
-
-      var MD = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.MD.A'].y,
-        name: 'Maryland',
-        type: 'scatter'
-      };
-
-      var MA = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.MA.A'].y,
-        name: 'Massachusetts',
-        type: 'scatter'
-      };
-
-      var MI = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.MI.A'].y,
-        name: 'Minnesota',
-        type: 'scatter'
-      };
-
-      var MN = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.MN.A'].y,
-        name: 'Minnesota',
-        type: 'scatter'
-      };
-
-      var MS = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.MS.A'].y,
-        name: 'Mississippi',
-        type: 'scatter'
-      };
-
-      var MO = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.MO.A'].y,
-        name: 'Missouri',
-        type: 'scatter'
-      };
-
-      var MT = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.MT.A'].y,
-        name: 'Montana',
-        type: 'scatter'
-      };
-
-      var NE = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.NE.A'].y,
-        name: 'Nebraska',
-        type: 'scatter'
-      };
-
-      var NV = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.NV.A'].y,
-        name: 'Nevada',
-        type: 'scatter'
-      };
-
-      var NH = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.NH.A'].y,
-        name: 'New Hampshire',
-        type: 'scatter'
-      };
-
-      var NJ = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.NJ.A'].y,
-        name: 'New Jersey',
-        type: 'scatter'
-      };
-
-      var NM = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.NM.A'].y,
-        name: 'New Mexico',
-        type: 'scatter'
-      };
-
-      var NY = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.NY.A'].y,
-        name: 'New York',
-        type: 'scatter'
-      };
-
-      var NC = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.NC.A'].y,
-        name: 'North Carolina',
-        type: 'scatter'
-      };
-
-      var ND = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.ND.A'].y,
-        name: 'North Dakota',
-        type: 'scatter'
-      };
-
-      var OH = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.OH.A'].y,
-        name: 'Ohio',
-        type: 'scatter'
-      };
-
-      var OK = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.OK.A'].y,
-        name: 'Oklahoma',
-        type: 'scatter'
-      };
-
-      var OR = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.OR.A'].y,
-        name: 'Oregon',
-        type: 'scatter'
-      };
-
-      var PA = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.PA.A'].y,
-        name: 'Pennsylvania',
-        type: 'scatter'
-      };
-
-      var RI = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.RI.A'].y,
-        name: 'Rhode Island',
-        type: 'scatter'
-      };
-
-      var SC = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.SC.A'].y,
-        name: 'South Carolina',
-        type: 'scatter'
-      };
-
-      var SD = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.SD.A'].y,
-        name: 'South Dakota',
-        type: 'scatter'
-      };
-
-      var TN = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.TN.A'].y,
-        name: 'Tennessee',
-        type: 'scatter'
-      };
-
-      var TX = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.TX.A'].y,
-        name: 'Texas',
-        type: 'scatter'
-      };
-
-      var UT = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.UT.A'].y,
-        name: 'Utah',
-        type: 'scatter'
-      };
-
-      var VT = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.VT.A'].y,
-        name: 'Vermont',
-        type: 'scatter'
-      };
-
-      var VA = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.VA.A'].y,
-        name: 'Virginia',
-        type: 'scatter'
-      };
-
-      var WA = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.WA.A'].y,
-        name: 'Washington',
-        type: 'scatter'
-      };
-
-      var WV = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.WV.A'].y,
-        name: 'West Virginia',
-        type: 'scatter'
-      };
-
-      var WI = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.WI.A'].y,
-        name: 'Wisconsin',
-        type: 'scatter'
-      };
-
-      var WY = {
-        x: stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].x,
-        y: stateJetFuelConsumptionData['SEDS.JFTCP.WY.A'].y,
-        name: 'Wyoming',
-        type: 'scatter'
-      };
-
-      var data = [AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME, MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY];
-
-      var layout = {
-        showlegend: false,
-        title: 'Annual Jet Fuel Consumption By U.S. State',
-        height: 700,
-        width: 1200,
-        xaxis: {
-          title: 'Year'
-        },
-        yaxis: {
-          title: 'Barrels'
-        },
-      };
-
-      Plotly.newPlot('stateJetFuelConsumptionLineGraph', data, layout);
-    }
-
     /* Get request for EIA data. */
 
     var getAnnualStateConsumptionAPIData = function() {
@@ -1480,14 +1763,15 @@
           for (var i = 0; i < data.length; i++) {
             stateJetFuelConsumptionData[id].x.push(data[i][0]);
 
-            /* Multiply each value by 1,000 to convert units. */
+            /* Multiply each value by 1,000 to convert barrel units. */
 
             stateJetFuelConsumptionData[id].y.push(data[i][1] * 1000);
           }
           if (i === data.length) {
             plotAnnualStateJetFuelConsumptionChoropleth();
-            plotAnnualStateJetFuelConsumptionBar();
-            // plotAnnualStateJetFuelConsumptionLine();
+            plotAnnualStateJetFuelConsumptionLine();
+            /* The bar chart is not active. */
+            // plotAnnualStateJetFuelConsumptionBar();
           }
         }
       }
