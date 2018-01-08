@@ -5,25 +5,36 @@
   <meta charset='utf-8'>
   <title>USA 21st Century Jet Fuel Explorer</title>
   <link href='stylesheet.css' rel='stylesheet'>
+  <!-- Font awesome for plane divider. -->
+  <link rel="stylesheet" href="fa/css/font-awesome.min.css">
+  <!-- Load Plot.ly to use the library. -->
   <script src='plotly-latest.min.js'></script>
 </head>
 
 <body>
-  <p>More than 2 million people fly every day in 21st Century America, according to the <a href='https://www.faa.gov/air_traffic/by_the_numbers/'>Federal Aviation Administration</a>. Consumption of jet fuel is an indicator of where people are flying to and
-    from the most.</p>
-  <p>The US Energy Information Administration reports the amount of jet fuel consumed in each of the USA's 50 states by year. The following interactives display the most recent data from the <a href='https://www.eia.gov/opendata/'>EIA API</a>.</p>
-  <h2>This map shows how many barrels of jet fuel does each US state consumes a year. Slide at the bottom to change the year. Hover for data.</h2>
+  <!-- Introduction. -->
+  <p>More than 2 million people fly every day in 21st Century America, according to the <a href='https://www.faa.gov/air_traffic/by_the_numbers/'>US Federal Aviation Administration</a>. Consumption of jet fuel is an indicator of where people are flying to
+    and from the most.</p>
+  <p>The US Energy Information Administration (EIA) reports the amount of jet fuel consumed in each of the USA's 50 states by year. The following interactives display the most recent data from the <a href='https://www.eia.gov/opendata/'>EIA API</a> from
+    the year 2000 on. Please be patient while the data loads from government servers.</p>
+  <!-- Plane icon for divider. -->
+  <i class='fa fa-plane' id='planeDivider' aria-hidden='true'></i>
+  <h2>This map shows how many barrels of jet each US state consumes a year. Slide at the bottom to go back in time. Hover for barrels consumed annually.</h2>
   <div class='graph' id='stateJetFuelConsumptionChoropleth'></div>
-  <h2>This timeline shows up to 30 states at a time. Click on the right to add or remove a state. Hover for data.</h2>
+  <h2>This timeline shows up to 30 states at a time. Click on the right to add or remove a state. Hover for barrels consumed annually.</h2>
   <div class='graph' id='stateJetFuelConsumptionLineGraph'></div>
   <script>
     /* API documentation: https://www.eia.gov/opendata/ */
 
 
+    /* Array of state names for the map to display on hvoer. */
+
     stateNames = ['Alabama', 'Alaska', 'Arkansas', 'Arizona', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
       'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma',
       'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
     ]
+
+    /* EIA API IDs that correspond to the state data. */
 
     annualStateJetFuelConsumptionIDs = ['SEDS.JFTCP.AL.A', 'SEDS.JFTCP.AK.A', 'SEDS.JFTCP.AR.A', 'SEDS.JFTCP.AZ.A', 'SEDS.JFTCP.CA.A', 'SEDS.JFTCP.CO.A', 'SEDS.JFTCP.CT.A', 'SEDS.JFTCP.DE.A', 'SEDS.JFTCP.FL.A', 'SEDS.JFTCP.GA.A',
       'SEDS.JFTCP.HI.A',
@@ -32,6 +43,8 @@
       'SEDS.JFTCP.OK.A', 'SEDS.JFTCP.OR.A', 'SEDS.JFTCP.PA.A', 'SEDS.JFTCP.RI.A', 'SEDS.JFTCP.SC.A', 'SEDS.JFTCP.SD.A', 'SEDS.JFTCP.TN.A', 'SEDS.JFTCP.TX.A', 'SEDS.JFTCP.UT.A', 'SEDS.JFTCP.VT.A', 'SEDS.JFTCP.VA.A', 'SEDS.JFTCP.WA.A',
       'SEDS.JFTCP.WV.A', 'SEDS.JFTCP.WI.A', 'SEDS.JFTCP.WY.A'
     ]
+
+    /* Data object to store values acquired from GET request. */
 
     var stateJetFuelConsumptionData = {
       'SEDS.JFTCP.AL.A': {
@@ -930,7 +943,8 @@
           currentvalue: {
             xanchor: 'center',
             font: {
-              color: '#22313F',
+              color: 'rgb(1,50,67)',
+              family: 'Helvetica',
               size: 30
             }
           },
@@ -1019,7 +1033,7 @@
     }
 
 
-    /* Line graph settings. */
+    /* Settings for line graph. */
 
     var plotAnnualStateJetFuelConsumptionLine = function() {
 
@@ -1679,17 +1693,45 @@
         height: 825,
         width: 1200,
         xaxis: {
-          title: 'Year'
+          title: 'Year',
+          tickcolor: 'rgb(1,50,67)',
+          tickfont: 'Helvetica',
+          titlefont: {
+            family: 'Helvetica',
+            size: 30,
+            color: 'rgb(1,50,67)'
+          },
+          tickfont: {
+            color: 'rgb(1,50,67)',
+            family: 'Helvetica',
+            size: 15
+          }
         },
         yaxis: {
-          title: 'Barrels'
+          title: 'Barrels',
+          tickcolor: 'rgb(1,50,67)',
+          titlefont: {
+            family: 'Helvetica',
+            size: 30,
+            color: 'rgb(1,50,67)'
+          },
+          tickfont: {
+            color: 'rgb(1,50,67)',
+            family: 'Helvetica',
+            size: 15
+          }
         },
+        legend: {
+          bgcolor: 'rgb(228, 241, 254)',
+          bordercolor: '#FFFFFF',
+          borderwidth: 2
+        }
       };
 
       Plotly.newPlot('stateJetFuelConsumptionLineGraph', data, layout);
     }
 
-    /* Bar graph settings. The bar chart is not operational. */
+    /* Bar graph settings. The bar chart is NOT operational. Can be triggered on via a function when the data is no longer pushing. */
 
     var plotAnnualStateJetFuelConsumptionBar = function() {
 
@@ -1754,11 +1796,15 @@
 
           apidata = JSON.parse(this.response);
 
+          /* Assign EIA API series id to an id variable. */
+
           var id = apidata.series[0].series_id;
 
-          /* This loops through all of the state ids and adds them to the appropriate state arrays for annual state jet fuel consumption. */
+          /* Assign data for each series id to a data variable. */
 
           var data = apidata.series[0].data;
+
+          /* Loop through all of the state ids and adds them to the appropriate state arrays for annual state jet fuel consumption. */
 
           for (var i = 0; i < data.length; i++) {
             stateJetFuelConsumptionData[id].x.push(data[i][0]);
@@ -1767,6 +1813,8 @@
 
             stateJetFuelConsumptionData[id].y.push(data[i][1] * 1000);
           }
+          /* When data is finished pushing, calling the functions that graph to the appropriate divs. */
+
           if (i === data.length) {
             plotAnnualStateJetFuelConsumptionChoropleth();
             plotAnnualStateJetFuelConsumptionLine();

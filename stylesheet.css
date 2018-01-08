@@ -1,8 +1,7 @@
-/* Set global background and font color here. */
+/* Set global background and font family here. */
 
 body {
   background-color: #FFFFFF;
-  color: #22313F;
   font-family: Helvetica, Georgia;
 }
 
@@ -13,8 +12,11 @@ div.graph {
   margin-left: 10vw;
 }
 
+/* Use viewport, rems, and calc for responsivity. */
+
 p {
 font-size: calc(1.1rem + 0.25vw);
+color: #013243;
 margin-top: 2vh;
 margin-right: 20vw;
 margin-left: 20vw;
@@ -22,15 +24,40 @@ letter-spacing: .1vw;
 padding: .5vw;
 }
 
-a {
-  text-decoration: none;
+/* Settings for the plane icon divider. */
+
+#planeDivider {
+  font-size: calc(5rem + 0.25vw);
+  margin-right: 45vw;
+  margin-left: 45vw;
+  color: #013243;
 }
 
+/* Graph title settings. */
+
 h2 {
+color: #013243;
 letter-spacing: .1vw;
 text-align: center;
 margin-top: 10vh;
 margin-right: 10vw;
 margin-left: 10vw;
 padding: .5vw;
+}
+
+/* Remove underline on hyperlinks and change their color. */
+
+a:link {
+  text-decoration: none;
+  color: #1F3A93;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #1F3A93;
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
 }
