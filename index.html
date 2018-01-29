@@ -17,7 +17,7 @@
     the year 2000 on. Please be patient while the data loads from government servers.</p>
   <h2>This map shows how many barrels of jet fuel each US state consumes a year. Slide at the bottom to go back in time. Hover for barrels consumed annually.</h2>
   <div class='graph' id='stateJetFuelConsumptionChoropleth'></div>
-  <h2>This timeline shows up to 30 states at a time. Click on the right to add or remove a state. Hover for barrels consumed annually.</h2>
+  <h2>This timeline shows up to 30 states at once. Click on the right to remove or add a state. Hover for barrels consumed annually.</h2>
   <div class='graph' id='stateJetFuelConsumptionLineGraph'></div>
   <script>
     /* API documentation: https://www.eia.gov/opendata/ */
@@ -1784,7 +1784,7 @@
 
     var getAnnualStateConsumptionAPIData = function() {
       for (var i = -1; annualStateJetFuelConsumptionIDs.length > i; i++) {
-        var url = 'http://api.eia.gov/series/?api_key=3d9541721290f76e46a2250bcbea2ff3&series_id=' + annualStateJetFuelConsumptionIDs[i] + '&start=20000101&out=json'
+        var url = 'https://api.eia.gov/series/?api_key=3d9541721290f76e46a2250bcbea2ff3&series_id=' + annualStateJetFuelConsumptionIDs[i] + '&start=20000101&out=json'
 
         var xhttp = new XMLHttpRequest();
 
