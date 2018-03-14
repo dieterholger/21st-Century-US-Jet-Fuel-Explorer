@@ -3,21 +3,24 @@
 
 <head>
   <meta charset='utf-8'>
-  <title>USA 21st Century Jet Fuel Explorer</title>
-  <link href='stylesheet.css' rel='stylesheet'>
+  <title>21st Century Jet Fuel Consumption Per Year By US State</title>
+  <link href='jetfuelexplorerstylesheet.css' rel='stylesheet'>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <!-- Load Plot.ly to use the library. -->
   <script src='plotly-latest.min.js'></script>
 </head>
 
 <body>
   <!-- Introduction. -->
+  <h1>How much jet fuel has each US state consumed per year in the 21st Century?</h1>
   <p>More than 2 million people fly every day in 21st Century America, according to the <a href='https://www.faa.gov/air_traffic/by_the_numbers/'>US Federal Aviation Administration</a>. Consumption of jet fuel is an indicator of where people are flying to
     and from the most.</p>
   <p>The US Energy Information Administration (EIA) reports the amount of jet fuel consumed in each of the USA's 50 states by year. The following interactives display the most recent data from the <a href='https://www.eia.gov/opendata/'>EIA API</a> from
-    the year 2000 on. Please be patient while the data loads from government servers.</p>
-  <h2>This map shows how many barrels of jet fuel each US state consumes a year. Slide at the bottom to go back in time. Hover for barrels consumed annually.</h2>
+    the year 2000 on.</p>
+  <p><strong><i>Please be patient while the data loads from government servers</i></strong></p>
+  <h2>This map shows how many barrels of jet fuel each US state consumes a year. A barrel contains 159 litres. Slide at the bottom to go back in time. Hover for barrels consumed annually.</h2>
   <div class='graph' id='stateJetFuelConsumptionChoropleth'></div>
-  <h2>This timeline shows up to 30 states at once. Click on the right to remove or add a state. Hover for barrels consumed annually.</h2>
+  <h2>This timeline shows up to 30 states at a time. Click on the right to add or remove a state. Hover for barrels consumed annually.</h2>
   <div class='graph' id='stateJetFuelConsumptionLineGraph'></div>
   <script>
     /* API documentation: https://www.eia.gov/opendata/ */
@@ -1030,7 +1033,7 @@
           }
         },
         width: 1100,
-        height: 700
+        height: 700,
       })
     }
 
@@ -1786,13 +1789,13 @@
       for (var i = -1; annualStateJetFuelConsumptionIDs.length > i; i++) {
         var url = 'https://api.eia.gov/series/?api_key=3d9541721290f76e46a2250bcbea2ff3&series_id=' + annualStateJetFuelConsumptionIDs[i] + '&start=20000101&out=json'
 
-        var xhttp = new XMLHttpRequest();
+        var https = new XMLHttpRequest();
 
-        xhttp.open('GET', url);
+        https.open('GET', url);
 
-        xhttp.send();
+        https.send();
 
-        xhttp.addEventListener('load', processResponse);
+        https.addEventListener('load', processResponse);
 
         var processResponse = function() {
 
